@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+    webserver:
+        build:
+            context: ./app
+        container_name: webserver
+    nginx:
+        restart: always
+        build:
+            context: ./nginx
+        ports:
+            - "8000:8000"
+        container_name: proxy
